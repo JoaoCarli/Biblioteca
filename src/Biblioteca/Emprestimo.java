@@ -7,6 +7,7 @@ public class Emprestimo {
     private String data_dev;
     private float multa;
     private int dias_multa;
+    private Usuarios usuario;
     private List<Livro> livros;
 
     public String getData_inicio() {
@@ -41,6 +42,14 @@ public class Emprestimo {
         this.dias_multa = dias_multa;
     }
 
+    public Usuarios getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuarios usuario) {
+        this.usuario = usuario;
+    }
+
     public List<Livro> getLivros() {
         return livros;
     }
@@ -49,18 +58,18 @@ public class Emprestimo {
         this.livros = livros;
     }
 
-    public Emprestimo(String data_inicio, String data_dev, float multa, int dias_multa, List<Livro> livros) {
+    public Emprestimo(String data_inicio, String data_dev, float multa, int dias_multa, Usuarios usuario) {
         this.data_inicio = data_inicio;
         this.data_dev = data_dev;
         this.multa = multa;
         this.dias_multa = dias_multa;
-        this.livros = livros;
+        this.usuario = usuario;
     }
 
     @Override
     public String toString() {
         return "Emprestimo [data_inicio=" + data_inicio + ", data_dev=" + data_dev + ", multa=" + multa
-                + ", dias_multa=" + dias_multa + ", livros=" + livros + "]";
+                + ", dias_multa=" + dias_multa + ", usuario=" + usuario + ", livros=" + livros + "]";
     }
 
 }

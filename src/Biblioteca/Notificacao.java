@@ -1,14 +1,12 @@
 package Biblioteca;
 
-import java.util.List;
-
 public class Notificacao {
     private int user_id;
     private String situacao;
     private int dias_atraso;
     private String info;
-    private List<Usuarios> usuario;
-    private List<Emprestimo> emprestimo;
+    private Usuarios usuario;
+    private Emprestimo emprestimo;
 
     public int getUser_id() {
         return user_id;
@@ -42,24 +40,24 @@ public class Notificacao {
         this.info = info;
     }
 
-    public List<Usuarios> getUsuario() {
+    public Usuarios getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(List<Usuarios> usuario) {
+    public void setUsuario(Usuarios usuario) {
         this.usuario = usuario;
     }
 
-    public List<Emprestimo> getEmprestimo() {
+    public Emprestimo getEmprestimo() {
         return emprestimo;
     }
 
-    public void setEmprestimo(List<Emprestimo> emprestimo) {
+    public void setEmprestimo(Emprestimo emprestimo) {
         this.emprestimo = emprestimo;
     }
 
-    public Notificacao(int user_id, String situacao, int dias_atraso, String info, List<Usuarios> usuario,
-            List<Emprestimo> emprestimo) {
+    public Notificacao(int user_id, String situacao, int dias_atraso, String info, Usuarios usuario,
+            Emprestimo emprestimo) {
         this.user_id = user_id;
         this.situacao = situacao;
         this.dias_atraso = dias_atraso;
@@ -73,4 +71,5 @@ public class Notificacao {
         return "Notificacao [user_id=" + user_id + ", situacao=" + situacao + ", dias_atraso=" + dias_atraso + ", info="
                 + info + ", usuario=" + usuario + ", emprestimo=" + emprestimo + "]";
     }
+
 }

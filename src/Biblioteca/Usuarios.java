@@ -6,8 +6,7 @@ public class Usuarios {
     private int id;
     private String nome;
     private String email;
-    private List<String> livros_reservados;
-    private List<Livro> livro;
+    private Emprestimo emprestimo;
 
     public int getId() {
         return id;
@@ -33,34 +32,24 @@ public class Usuarios {
         this.email = email;
     }
 
-    public List<String> getLivros_reservados() {
-        return livros_reservados;
+    public Emprestimo getEmprestimo() {
+        return emprestimo;
     }
 
-    public void setLivros_reservados(List<String> livros_reservados) {
-        this.livros_reservados = livros_reservados;
+    public void setEmprestimo(Emprestimo emprestimo) {
+        this.emprestimo = emprestimo;
     }
 
-    public List<Livro> getLivro() {
-        return livro;
-    }
-
-    public void setLivro(List<Livro> livro) {
-        this.livro = livro;
-    }
-
-    public Usuarios(int id, String nome, String email, List<String> livros_reservados, List<Livro> livro) {
+    public Usuarios(int id, String nome, String email, Emprestimo emprestimo) {
         this.id = id;
         this.nome = nome;
         this.email = email;
-        this.livros_reservados = livros_reservados;
-        this.livro = livro;
+        this.emprestimo = emprestimo;
     }
 
     @Override
     public String toString() {
-        return "Usuarios [id=" + id + ", nome=" + nome + ", email=" + email + ", livros_reservados=" + livros_reservados
-                + ", livro=" + livro + "]";
+        return "Usuarios [id=" + id + ", nome=" + nome + ", email=" + email + ", emprestimo=" + emprestimo + "]";
     }
 
 }
