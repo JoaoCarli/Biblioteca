@@ -64,19 +64,18 @@ public class Usuarios {
                 + ", emprestimos=" + emprestimos + "]";
     }
 
-    public void reservarLivro(Livro livro){
-        if(!livro.getStatus() && !this.livros_reservados.contains(livro)){
+    public void reservarLivro(Livro livro) {
+        if (!livro.getStatus() && !this.livros_reservados.contains(livro)) {
             this.livros_reservados.add(livro);
             livro.adicionarReserva(this);
-        }
-        else{
+        } else {
             System.out.println("O livro está disponivel para emprestimo!");
         }
     }
 
-    public void adicionarEmprestimo(Emprestimo emprestimo){
-        for(Emprestimo e : emprestimos){
-            if(e.getLivro().getNum_isbn().equals(emprestimo.getLivro().getNum_isbn())){
+    public void adicionarEmprestimo(Emprestimo emprestimo) {
+        for (Emprestimo e : emprestimos) {
+            if (e.getLivro().getNum_isbn().equals(emprestimo.getLivro().getNum_isbn())) {
                 System.out.println("O livro ja foi adicionado a lista de emprestados!");
                 return;
             }
