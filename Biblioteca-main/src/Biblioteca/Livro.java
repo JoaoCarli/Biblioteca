@@ -12,6 +12,11 @@ public class Livro {
     private String categoria;
     private boolean status;
     private List<Usuarios> filaReservas;
+    private LocalDate dataLimiteRetirada;
+
+    public LocalDate getDataLimiteRetirada() {
+        return dataLimiteRetirada;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -27,6 +32,10 @@ public class Livro {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public void setDataLimiteRetirada(LocalDate dataLimiteRetirada) {
+        this.dataLimiteRetirada = dataLimiteRetirada;
     }
 
     public String getAutor() {
@@ -86,8 +95,8 @@ public class Livro {
                 + data_publicacao + ", categoria=" + categoria + ", status=" + status + "]";
     }
 
-    public void adicionarReserva(Usuarios usuario){
-        if(!filaReservas.contains(usuario)){
+    public void adicionarReserva(Usuarios usuario) {
+        if (!filaReservas.contains(usuario)) {
             filaReservas.add(usuario);
         }
     }

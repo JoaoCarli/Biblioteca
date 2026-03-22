@@ -14,8 +14,7 @@ public class SistemaBiblio {
                 LocalDate.of(1899, 12, 15),
                 "Romance",
                 true,
-                new ArrayList<>()
-        );
+                new ArrayList<>());
 
         Livro livro2 = new Livro(
                 "A Divina Comédia",
@@ -24,22 +23,25 @@ public class SistemaBiblio {
                 LocalDate.of(1304, 6, 24),
                 "Epopeia",
                 false,
-                new ArrayList<>()
-        );
+                new ArrayList<>());
 
         biblioteca.adicionarLivro(livro1);
         biblioteca.adicionarLivro(livro2);
 
-        Usuarios user1 = new Usuarios(
-                0,
-                "Carlos",
-                "carlos@gmail.com"
-        );
+        Usuarios user1 = new Usuarios(0, "Carlos", "carlos@gmail.com");
+        Usuarios user2 = new Usuarios(1, "Ana", "ana@email.com");
+        Usuarios user3 = new Usuarios(2, "Bruno", "bruno@email.com");
 
         biblioteca.cadastrarusuario(user1);
+        biblioteca.cadastrarusuario(user2);
+        biblioteca.cadastrarusuario(user3);
 
         biblioteca.realizarEmprestimo(user1, "978-8572322645");
+        biblioteca.realizarEmprestimo(user2, "978-8572322645");
         biblioteca.realizarEmprestimo(user1, "790-8312104290");
+        biblioteca.realizarEmprestimo(user3, "978-8572322645");
+
+        biblioteca.devolverLivro(user1, livro1);
 
         Livro buscado = biblioteca.buscarLivroPorISBN("978-8572322645");
         if (buscado != null) {
