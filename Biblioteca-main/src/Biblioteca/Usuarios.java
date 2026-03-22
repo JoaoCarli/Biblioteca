@@ -82,4 +82,18 @@ public class Usuarios {
         }
         emprestimos.add(emprestimo);
     }
+
+    public void enviarNotificacao(Notificacao notificacao) {
+        System.out.println("------------------------------------------");
+        System.out.println("ENVIANDO E-MAIL PARA: " + this.email);
+        System.out.println("ASSUNTO: Notificação de " + notificacao.getSituacao());
+        System.out.println("MENSAGEM: Olá " + this.nome + ", " + notificacao.getInfo());
+
+        if (notificacao.getDias_atraso() > 0) {
+            System.out.println("ALERTA: Você está com " + notificacao.getDias_atraso() + " dias de atraso.");
+        }
+
+        System.out.println("E-mail enviado com sucesso!");
+        System.out.println("------------------------------------------");
+    }
 }
